@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Michel Magdi — Software Engineer portfolio showcasing projects, skills, and professional experience.">
+    <title>Michel Magdi — Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============ ICON DOCK NAVIGATION ============ -->
+    <nav class="dock" id="dock">
+        <a href="#about" class="dock-icon active" data-section="about" aria-label="About">
+            <i class="fas fa-user"></i>
+            <span class="dock-tooltip">About</span>
+        </a>
+        <a href="#projects" class="dock-icon" data-section="projects" aria-label="Projects">
+            <i class="fas fa-folder-open"></i>
+            <span class="dock-tooltip">Projects</span>
+        </a>
+        <a href="#experience" class="dock-icon" data-section="experience" aria-label="Experience">
+            <i class="fas fa-briefcase"></i>
+            <span class="dock-tooltip">Experience</span>
+        </a>
+        <a href="#contact" class="dock-icon" data-section="contact" aria-label="Contact">
+            <i class="fas fa-paper-plane"></i>
+            <span class="dock-tooltip">Contact</span>
+        </a>
+    </nav>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="main-content">
+
+        <!-- ===== ABOUT SECTION ===== -->
+        <section id="about" class="section section-about">
+            <div class="section-content">
+                <h3>Hi, I'm</h3>
+                <h1 class="hero-heading animate-in">
+                    <span class="hero-line">Michel</span>
+                    <span class="hero-line accent">Magdy</span>
+                </h1>
+                <p class="hero-subtitle animate-in">Software Developer</p>
+
+                <div class="about-grid">
+                    <div class="about-text animate-in">
+                        <p>I'm <strong>Michel Magdi</strong>, a passionate Software Engineer who loves building <strong
+                                class="accent-text">beautiful</strong> and <strong
+                                class="accent-text">functional</strong> digital experiences.</p>
+                        <p>From dynamic web applications to elegant user interfaces, my philosophy remains the same:
+                            make it accessible, performant, and delight the user.</p>
+                        <p>I'm committed to continuous learning and staying at the cutting edge of web technologies,
+                            turning ideas into polished, production-ready products.</p>
+                    </div>
+                    <div class="about-image animate-in">
+                        <div class="image-frame">
+                            <div class="image-placeholder">
+                                <img src="/PIW/Icons/WhatsApp_Image_2026-03-03_at_6.41.31_PM-removebg-preview (1).png" alt="">
+                                <!-- <i class="fas fa-user"></i> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bento Grid Cards -->
+                <div class="bento-grid animate-in">
+                    <div class="bento-card bento-skills">
+                        <div class="bento-icon"><i class="fas fa-code"></i></div>
+                        <h3>Tech Stack</h3>
+                        <div class="skill-chips">
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">TypeScript</span>
+                            <span class="chip">SQL</span>
+                            <span class="chip">Angular</span>
+                            <span class="chip">.Net</span>
+                            <span class="chip">Python</span>
+                            <span class="chip">HTML/CSS</span>
+                            <span class="chip">Git</span>
+                        </div>
+                    </div>
+                    <div class="bento-card bento-stats">
+                        <div class="bento-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Quick Stats</h3>
+                        <div class="stats-row">
+                            <div class="stat">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">2+</span>
+                                <span class="stat-label">Years Exp</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Technologies</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-card bento-passion">
+                        <div class="bento-icon"><i class="fas fa-heart"></i></div>
+                        <h3>What Drives Me</h3>
+                        <p>Crafting pixel-perfect interfaces that not only look stunning but also deliver seamless user
+                            experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS SECTION ===== -->
+        <section id="projects" class="section section-projects">
+            <div class="section-content">
+                <h2 class="section-heading animate-in">Projects</h2>
+                <p class="section-subtitle animate-in">Personal projects I've been working on.</p>
+
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIENCE SECTION ===== -->
+        <section id="experience" class="section section-experience">
+            <div class="section-content">
+                <h2 class="section-heading animate-in">Experience</h2>
+                <p class="section-subtitle animate-in">My academic and professional journey so far.</p>
+
+                <div class="timeline" id="timeline">
+                    <!-- Timeline items injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT SECTION ===== -->
+        <section id="contact" class="section section-contact">
+            <div class="section-content">
+                <h2 class="section-heading animate-in">Get In Touch</h2>
+                <p class="section-subtitle animate-in">Have a project in mind? Let's build something amazing together.
+                </p>
+
+                <div class="contact-grid animate-in">
+                    <a href="mailto:hello@example.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello@example.com</span>
+                    </a>
+                    <a href="https://github.com/" target="_blank" rel="noopener" class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener" class="contact-card">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" rel="noopener" class="contact-card">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ PROJECT DETAIL MODAL ============ -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <div class="modal-carousel" id="modalCarousel">
+                        <!-- Images injected by JS -->
+                    </div>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+                <div class="modal-right">
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <p class="modal-category" id="modalCategory"></p>
+
+                    <h4 class="modal-label">DESCRIPTION</h4>
+                    <p class="modal-description" id="modalDescription"></p>
+
+                    <h4 class="modal-label">KEY FEATURES</h4>
+                    <ul class="modal-features" id="modalFeatures"></ul>
+
+                    <h4 class="modal-label">TECHNOLOGIES</h4>
+                    <div class="modal-tech" id="modalTech"></div>
+
+                    <div class="modal-links" id="modalLinks"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
