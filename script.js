@@ -143,8 +143,8 @@ const experiences = [
             'Contributing to open-source projects on GitHub'
         ]
     },
-  
-    ];
+
+];
 // ─── SERVICES DATA ────────────────────────────────────────────
 const services = [
     {
@@ -266,9 +266,12 @@ function renderProjects() {
     grid.innerHTML = projects.map((project, i) => `
         <div class="project-card animate-in" data-index="${i}">
             <div class="project-card-image">
-                <div style="width:100%;height:100%;background:${generateProjectGradient(i)};display:flex;align-items:center;justify-content:center;">
-                    <span style="font-size:2.5rem;opacity:0.5;color:#fff;font-family:var(--font-heading);">${project.title.charAt(0)}</span>
-                </div>
+                ${project.images.length > 0
+            ? `<img src="${project.images[0]}" alt="${project.title}" style="width:100%;height:100%;object-fit:cover;">`
+            : `<div style="width:100%;height:100%;background:${generateProjectGradient(i)};display:flex;align-items:center;justify-content:center;">
+                        <span style="font-size:2.5rem;opacity:0.5;color:#fff;font-family:var(--font-heading);">${project.title.charAt(0)}</span>
+                    </div>`
+        }
                 <div class="project-overlay"></div>
             </div>
             <div class="project-card-body">
