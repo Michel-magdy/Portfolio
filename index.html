@@ -18,6 +18,16 @@
 
 <body>
 
+    <!-- ============ ANIMATED BACKGROUND ============ -->
+    <div class="bg-effects" aria-hidden="true">
+        <div class="bg-orb bg-orb--1"></div>
+        <div class="bg-orb bg-orb--2"></div>
+        <div class="bg-orb bg-orb--3"></div>
+        <div class="bg-grid"></div>
+        <div class="bg-noise"></div>
+        <div class="bg-vignette"></div>
+    </div>
+
     <!-- ============ ICON DOCK NAVIGATION ============ -->
     <nav class="dock" id="dock">
         <a href="#about" class="dock-icon active" data-section="about" aria-label="About">
@@ -31,6 +41,14 @@
         <a href="#experience" class="dock-icon" data-section="experience" aria-label="Experience">
             <i class="fas fa-briefcase"></i>
             <span class="dock-tooltip">Experience</span>
+        </a>
+        <a href="#services" class="dock-icon" data-section="services" aria-label="Services">
+            <i class="fas fa-layer-group"></i>
+            <span class="dock-tooltip">Services</span>
+        </a>
+        <a href="#pricing" class="dock-icon" data-section="pricing" aria-label="Pricing">
+            <i class="fas fa-tags"></i>
+            <span class="dock-tooltip">Pricing</span>
         </a>
         <a href="#contact" class="dock-icon" data-section="contact" aria-label="Contact">
             <i class="fas fa-paper-plane"></i>
@@ -46,8 +64,13 @@
             <div class="section-content">
                 <h3>Hi, I'm</h3>
                 <h1 class="hero-heading animate-in">
-                    <span class="hero-line">Michel</span>
-                    <span class="hero-line accent">Magdy</span>
+                    <span class="hero-name-wrapper" id="heroNameWrapper">
+                        <span class="hero-line">Michel</span>
+                        <span class="hero-line accent">Magdy</span>
+                        <div class="hero-hover-image" id="heroHoverImage">
+                            <img src="" alt="" class="hover-cycle-img" id="hoverCycleImg">
+                        </div>
+                    </span>
                 </h1>
                 <p class="hero-subtitle animate-in">Software Developer</p>
 
@@ -60,14 +83,6 @@
                             make it accessible, performant, and delight the user.</p>
                         <p>I'm committed to continuous learning and staying at the cutting edge of web technologies,
                             turning ideas into polished, production-ready products.</p>
-                    </div>
-                    <div class="about-image animate-in">
-                        <div class="image-frame">
-                            <div class="image-placeholder">
-                                <img src="/PIW/Icons/WhatsApp_Image_2026-03-03_at_6.41.31_PM-removebg-preview (1).png" alt="">
-                                <!-- <i class="fas fa-user"></i> -->
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -139,6 +154,30 @@
             </div>
         </section>
 
+        <!-- ===== SERVICES SECTION ===== -->
+        <section id="services" class="section section-services">
+            <div class="section-content">
+                <h2 class="section-heading animate-in">Services</h2>
+                <p class="section-subtitle animate-in">What I can do for you.</p>
+
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PRICING SECTION ===== -->
+        <section id="pricing" class="section section-pricing">
+            <div class="section-content">
+                <h2 class="section-heading animate-in">Pricing Plans</h2>
+                <p class="section-subtitle animate-in">Transparent pricing for every project size.</p>
+
+                <div class="pricing-grid" id="pricingGrid">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
         <!-- ===== CONTACT SECTION ===== -->
         <section id="contact" class="section section-contact">
             <div class="section-content">
@@ -147,15 +186,15 @@
                 </p>
 
                 <div class="contact-grid animate-in">
-                    <a href="mailto:hello@example.com" class="contact-card">
+                    <a href="mailto:michoo.m.louis@gmail.com" class="contact-card">
                         <i class="fas fa-envelope"></i>
-                        <span>hello@example.com</span>
+                        <span>michoo.m.louis@gmail.com </span>
                     </a>
-                    <a href="https://github.com/" target="_blank" rel="noopener" class="contact-card">
+                    <a href="https://github.com/Michel-magdy" target="_blank" rel="noopener" class="contact-card">
                         <i class="fab fa-github"></i>
                         <span>GitHub</span>
                     </a>
-                    <a href="https://linkedin.com/" target="_blank" rel="noopener" class="contact-card">
+                    <a href="https://www.linkedin.com/in/michel-m-louis/" target="_blank" rel="noopener" class="contact-card">
                         <i class="fab fa-linkedin-in"></i>
                         <span>LinkedIn</span>
                     </a>

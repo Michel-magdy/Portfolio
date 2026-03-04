@@ -42,7 +42,11 @@ const projects = [
             'Form validation for checkout process'
         ],
         tech: ['HTML', 'CSS', 'JavaScript'],
-        images: [],
+        images: [
+            'assets/images/E-commerce.png',
+            'assets/images/E-commerce2.png',
+            'assets/images/E-commerce3.png',
+        ],
         links: { live: '#', github: '#' }
     },
     {
@@ -58,7 +62,11 @@ const projects = [
             'Mobile-first responsive design'
         ],
         tech: ['HTML', 'CSS', 'JavaScript'],
-        images: [],
+        images: [
+            'assets/images/AXEGym.png',
+            'assets/images/AXEGym2.png',
+            'assets/images/AXEGym3.png',
+        ],
         links: { live: '#', github: '#' }
     },
     {
@@ -74,7 +82,9 @@ const projects = [
             'Filter and search functionality'
         ],
         tech: ['HTML', 'CSS', 'JavaScript'],
-        images: [],
+        images: [
+            'assets/images/To-Do.png'
+        ],
         links: { live: '#', github: '#' }
     },
     {
@@ -97,40 +107,144 @@ const projects = [
 // ─── EXPERIENCE DATA ──────────────────────────────────────────
 const experiences = [
     {
-        company: 'Freelance',
-        role: 'Web Developer',
-        icon: 'fas fa-laptop-code',
-        date: '2024 — PRESENT',
+        company: 'DEPI',
+        role: 'Full-stack .Net Trainee',
+        image: 'assets/depi.webp',
+        date: '2025 — PRESENT',
         tasks: [
-            'Building custom websites and web applications for clients',
-            'Developing responsive, accessible, and performant front-ends',
+            'Learning .Net framework and C#',
+            'Building a web application using .Net framework and C#',
             'Collaborating with designers to translate Figma mockups into code',
             'Implementing modern CSS techniques including glassmorphism and animations'
-        ]
-    },
-    {
-        company: 'Self-Employed',
-        role: 'Software Engineering Student',
-        icon: 'fas fa-graduation-cap',
-        date: '2023 — PRESENT',
-        tasks: [
-            'Studying Computer Science fundamentals and algorithms',
-            'Building personal projects to strengthen full-stack skills',
-            'Learning modern frameworks like React and Angular',
-            'Contributing to open-source projects on GitHub'
         ]
     },
     {
         company: 'Online Courses',
         role: 'Continuous Learner',
         icon: 'fas fa-book-open',
-        date: '2022 — PRESENT',
+        date: '2024 — PRESENT',
         tasks: [
             'Completed multiple web development courses and certifications',
             'Practiced data structures, algorithms, and problem-solving',
             'Built 10+ projects spanning front-end and full-stack development',
             'Explored cloud services and deployment pipelines'
         ]
+    },
+    {
+        company: 'Shorouk Academy',
+        role: 'Computer Science Student',
+        image: 'assets/Sha.jfif',
+        icon: 'fas fa-graduation-cap',
+        date: '2023 — PRESENT',
+        tasks: [
+            'Studying Computer Science fundamentals and algorithms',
+            'Building personal projects to strengthen full-stack skills',
+            'Learning modern frameworks like Angular and .Net',
+            'Contributing to open-source projects on GitHub'
+        ]
+    },
+  
+    ];
+// ─── SERVICES DATA ────────────────────────────────────────────
+const services = [
+    {
+        icon: 'fas fa-globe',
+        iconClass: 'icon-web',
+        title: 'Web Development',
+        desc: 'Full-stack web applications built with modern technologies and best practices.',
+        features: ['Custom web applications', 'CMS integration', 'E-commerce solutions', 'Database design']
+    },
+    {
+        icon: 'fas fa-palette',
+        iconClass: 'icon-frontend',
+        title: 'Frontend Engineering',
+        desc: 'Pixel-perfect, interactive user interfaces with smooth animations and transitions.',
+        features: ['Component-based architecture', 'State management', 'Animation & motion', 'Accessibility (a11y)']
+    },
+    {
+        icon: 'fas fa-server',
+        iconClass: 'icon-backend',
+        title: 'Backend Development',
+        desc: 'Robust server-side solutions with secure APIs and scalable architecture.',
+        features: ['RESTful API design', 'Authentication & security', 'Database optimization', 'Cloud deployment']
+    },
+    {
+        icon: 'fas fa-plug',
+        iconClass: 'icon-api',
+        title: 'API Integration',
+        desc: 'Seamless third-party service integration and custom API development.',
+        features: ['Payment gateways', 'Social media APIs', 'Analytics platforms', 'Custom webhooks']
+    },
+    {
+        icon: 'fas fa-mobile-alt',
+        iconClass: 'icon-responsive',
+        title: 'Responsive Design',
+        desc: 'Designs that look and work flawlessly across every device and screen size.',
+        features: ['Mobile-first approach', 'Cross-browser testing', 'Touch-optimized UI', 'Adaptive layouts']
+    },
+    {
+        icon: 'fas fa-tachometer-alt',
+        iconClass: 'icon-performance',
+        title: 'Performance Optimization',
+        desc: 'Lightning-fast load times through code splitting, caching, and asset optimization.',
+        features: ['Core Web Vitals', 'Asset compression', 'Lazy loading', 'SEO optimization']
+    }
+];
+// ─── PRICING DATA ─────────────────────────────────────────────
+const pricingPlans = [
+    {
+        tier: 'Starter',
+        price: '20',
+        period: '/project',
+        desc: 'Perfect for small businesses and personal projects that need a professional web presence.',
+        features: [
+            { text: 'Single-page website', enabled: true },
+            { text: 'Responsive design', enabled: true },
+            { text: 'Contact form', enabled: true },
+            { text: 'Basic SEO setup', enabled: true },
+            { text: '1 round of revisions', enabled: true },
+            { text: 'Custom animations', enabled: false },
+            { text: 'CMS integration', enabled: false },
+            { text: 'Priority support', enabled: false }
+        ],
+        cta: 'Get Started',
+        popular: false
+    },
+    {
+        tier: 'Professional',
+        price: '50',
+        period: '/project',
+        desc: 'Ideal for growing businesses that need a feature-rich, multi-page web application.',
+        features: [
+            { text: 'Multi-page website (up to 8)', enabled: true },
+            { text: 'Responsive design', enabled: true },
+            { text: 'Contact form + integrations', enabled: true },
+            { text: 'Advanced SEO setup', enabled: true },
+            { text: '3 rounds of revisions', enabled: true },
+            { text: 'Custom animations', enabled: true },
+            { text: 'CMS integration', enabled: true },
+            { text: 'Priority support', enabled: false }
+        ],
+        cta: 'Choose Professional',
+        popular: true
+    },
+    {
+        tier: 'Enterprise',
+        price: '200',
+        period: '+',
+        desc: 'For enterprises needing complex, scalable web solutions with ongoing support.',
+        features: [
+            { text: 'Unlimited pages', enabled: true },
+            { text: 'Responsive design', enabled: true },
+            { text: 'Advanced forms & workflows', enabled: true },
+            { text: 'Full SEO & analytics suite', enabled: true },
+            { text: 'Unlimited revisions', enabled: true },
+            { text: 'Custom animations', enabled: true },
+            { text: 'CMS + API integration', enabled: true },
+            { text: 'Priority support (30 days)', enabled: true }
+        ],
+        cta: 'Contact Me',
+        popular: false
     }
 ];
 // ─── GENERATE PROJECT CARD GRADIENT PLACEHOLDER ────────────────
@@ -183,12 +297,19 @@ function renderProjects() {
 function renderTimeline() {
     const timeline = document.getElementById('timeline');
     if (!timeline) return;
-    timeline.innerHTML = experiences.map(exp => `
+    timeline.innerHTML = experiences.map(exp => {
+        const nodeContent = exp.image
+            ? `<img src="${exp.image}" alt="${exp.company}" style="width:100%;height:100%;object-fit:contain;border-radius:50%;">`
+            : `<i class="${exp.icon}"></i>`;
+        const logoContent = exp.image
+            ? `<img src="${exp.image}" alt="${exp.company}" style="width:100%;height:100%;object-fit:contain;border-radius:10px;">`
+            : `<i class="${exp.icon}"></i>`;
+        return `
         <div class="timeline-item animate-in">
-            <div class="timeline-node"><i class="${exp.icon}"></i></div>
+            <div class="timeline-node">${nodeContent}</div>
             <div class="timeline-card">
                 <div class="timeline-header">
-                    <div class="timeline-logo"><i class="${exp.icon}"></i></div>
+                    <div class="timeline-logo">${logoContent}</div>
                     <div class="timeline-info">
                         <h3>${exp.company}</h3>
                         <span class="role">${exp.role}</span>
@@ -199,6 +320,41 @@ function renderTimeline() {
                     ${exp.tasks.map(t => `<li>${t}</li>`).join('')}
                 </ul>
             </div>
+        </div>
+    `;
+    }).join('');
+}
+// ─── RENDER SERVICES ──────────────────────────────────────────
+function renderServices() {
+    const grid = document.getElementById('servicesGrid');
+    if (!grid) return;
+    grid.innerHTML = services.map(s => `
+        <div class="service-card animate-in">
+            <div class="service-icon ${s.iconClass}"><i class="${s.icon}"></i></div>
+            <h3>${s.title}</h3>
+            <p>${s.desc}</p>
+            <ul class="service-features">
+                ${s.features.map(f => `<li>${f}</li>`).join('')}
+            </ul>
+        </div>
+    `).join('');
+}
+// ─── RENDER PRICING ───────────────────────────────────────────
+function renderPricing() {
+    const grid = document.getElementById('pricingGrid');
+    if (!grid) return;
+    grid.innerHTML = pricingPlans.map(plan => `
+        <div class="pricing-card${plan.popular ? ' popular' : ''} animate-in">
+            ${plan.popular ? '<span class="pricing-badge">Most Popular</span>' : ''}
+            <div class="pricing-tier">${plan.tier}</div>
+            <div class="pricing-price">
+                <span class="currency">$</span>${plan.price}<span class="period">${plan.period}</span>
+            </div>
+            <p class="pricing-desc">${plan.desc}</p>
+            <ul class="pricing-features">
+                ${plan.features.map(f => `<li class="${f.enabled ? '' : 'disabled'}">${f.text}</li>`).join('')}
+            </ul>
+            <a href="#contact" class="pricing-cta">${plan.cta}</a>
         </div>
     `).join('');
 }
@@ -334,6 +490,48 @@ function initSmoothScroll() {
         });
     });
 }
+// ─── HERO NAME HOVER IMAGE CYCLING ────────────────────────────
+function initNameHoverEffect() {
+    const wrapper = document.getElementById('heroNameWrapper');
+    const img = document.getElementById('hoverCycleImg');
+    if (!wrapper || !img) return;
+
+    const hoverImages = [
+        'assets/hover1.jpeg',
+        'assets/hover2.jpeg',
+        'assets/hover3.jpeg',
+        'assets/hover4.jpeg',
+    ];
+
+    // Preload images for instant display
+    hoverImages.forEach(src => {
+        const preload = new Image();
+        preload.src = src;
+    });
+
+    let cycleInterval = null;
+    let currentIndex = 0;
+
+    wrapper.addEventListener('mouseenter', () => {
+        // Skip on small screens where popup would overflow
+        if (window.innerWidth < 768) return;
+
+        currentIndex = 0;
+        img.src = hoverImages[currentIndex];
+
+        cycleInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % hoverImages.length;
+            img.src = hoverImages[currentIndex];
+        }, 650);
+    });
+
+    wrapper.addEventListener('mouseleave', () => {
+        if (cycleInterval) {
+            clearInterval(cycleInterval);
+            cycleInterval = null;
+        }
+    });
+}
 // ─── INITIALIZE EVERYTHING ────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
     // Always start at the top — clear any leftover URL hash
@@ -344,7 +542,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderProjects();
     renderTimeline();
+    renderServices();
+    renderPricing();
     initScrollAnimations();
     initActiveNav();
     initSmoothScroll();
+    initNameHoverEffect();
 });
