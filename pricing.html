@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Michel Magdi — Transparent pricing plans for web development projects of every size.">
+    <title>Pricing — Michel Magdi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Back link */
+        .back-link {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            background: rgba(18, 18, 22, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            font-family: var(--font-body);
+            text-decoration: none;
+            z-index: 100;
+            transition: all 0.3s var(--ease-smooth);
+        }
+
+        .back-link:hover {
+            color: var(--accent-light);
+            border-color: rgba(74, 158, 255, 0.3);
+            background: rgba(74, 158, 255, 0.08);
+        }
+
+        .back-link i {
+            font-size: 0.75rem;
+            transition: transform 0.3s var(--ease-smooth);
+        }
+
+        .back-link:hover i {
+            transform: translateX(-3px);
+        }
+
+        /* Center the pricing section on its own page */
+        .pricing-page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pricing-page-wrapper .section-content {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .back-link {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .pricing-page-wrapper {
+                padding: 5rem 1.5rem 3rem;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ ANIMATED BACKGROUND ============ -->
+    <div class="bg-effects" aria-hidden="true">
+        <div class="bg-orb bg-orb--1"></div>
+        <div class="bg-orb bg-orb--2"></div>
+        <div class="bg-orb bg-orb--3"></div>
+        <div class="bg-grid"></div>
+        <div class="bg-noise"></div>
+        <div class="bg-vignette"></div>
+    </div>
+
+    <!-- ============ BACK LINK ============ -->
+    <a href="index.html" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Back to Portfolio
+    </a>
+
+    <!-- ============ PRICING CONTENT ============ -->
+    <div class="pricing-page-wrapper">
+        <div class="section-content">
+            <h2 class="section-heading animate-in">Pricing Plans</h2>
+            <p class="section-subtitle animate-in">Transparent pricing for every project size.</p>
+
+            <div class="pricing-grid" id="pricingGrid">
+                <!-- Cards injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ─── PRICING DATA ─────────────────────────────────────────────
+        const pricingPlans = [
+            {
+                tier: 'Starter',
+                price: '20',
+                period: '/project',
+                desc: 'Perfect for small businesses and personal projects that need a professional web presence.',
+                features: [
+                    { text: 'Single-page website', enabled: true },
+                    { text: 'Responsive design', enabled: true },
+                    { text: 'Contact form', enabled: true },
+                    { text: 'Basic SEO setup', enabled: true },
+                    { text: '1 round of revisions', enabled: true },
+                    { text: 'Custom animations', enabled: false },
+                    { text: 'CMS integration', enabled: false },
+                    { text: 'Priority support', enabled: false }
+                ],
+                cta: 'Get Started',
+                popular: false
+            },
+            {
+                tier: 'Professional',
+                price: '50',
+                period: '/project',
+                desc: 'Ideal for growing businesses that need a feature-rich, multi-page web application.',
+                features: [
+                    { text: 'Multi-page website (up to 8)', enabled: true },
+                    { text: 'Responsive design', enabled: true },
+                    { text: 'Contact form + integrations', enabled: true },
+                    { text: 'Advanced SEO setup', enabled: true },
+                    { text: '3 rounds of revisions', enabled: true },
+                    { text: 'Custom animations', enabled: true },
+                    { text: 'CMS integration', enabled: true },
+                    { text: 'Priority support', enabled: false }
+                ],
+                cta: 'Choose Professional',
+                popular: true
+            },
+            {
+                tier: 'Enterprise',
+                price: '200',
+                period: '+',
+                desc: 'For enterprises needing complex, scalable web solutions with ongoing support.',
+                features: [
+                    { text: 'Unlimited pages', enabled: true },
+                    { text: 'Responsive design', enabled: true },
+                    { text: 'Advanced forms & workflows', enabled: true },
+                    { text: 'Full SEO & analytics suite', enabled: true },
+                    { text: 'Unlimited revisions', enabled: true },
+                    { text: 'Custom animations', enabled: true },
+                    { text: 'CMS + API integration', enabled: true },
+                    { text: 'Priority support (30 days)', enabled: true }
+                ],
+                cta: 'Contact Me',
+                popular: false
+            }
+        ];
+
+        // ─── RENDER PRICING ───────────────────────────────────────────
+        function renderPricing() {
+            const grid = document.getElementById('pricingGrid');
+            if (!grid) return;
+            grid.innerHTML = pricingPlans.map(plan => `
+                <div class="pricing-card${plan.popular ? ' popular' : ''} animate-in">
+                    ${plan.popular ? '<span class="pricing-badge">Most Popular</span>' : ''}
+                    <div class="pricing-tier">${plan.tier}</div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>${plan.price}<span class="period">${plan.period}</span>
+                    </div>
+                    <p class="pricing-desc">${plan.desc}</p>
+                    <ul class="pricing-features">
+                        ${plan.features.map(f => `<li class="${f.enabled ? '' : 'disabled'}">${f.text}</li>`).join('')}
+                    </ul>
+                    <a href="index.html#contact" class="pricing-cta">${plan.cta}</a>
+                </div>
+            `).join('');
+        }
+
+        // ─── SCROLL ANIMATIONS ────────────────────────────────────────
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+        }
+
+        // ─── INIT ─────────────────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPricing();
+            initScrollAnimations();
+        });
+    </script>
+</body>
+
+</html>

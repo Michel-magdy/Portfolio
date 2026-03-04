@@ -190,63 +190,7 @@ const services = [
         features: ['Core Web Vitals', 'Asset compression', 'Lazy loading', 'SEO optimization']
     }
 ];
-// ─── PRICING DATA ─────────────────────────────────────────────
-const pricingPlans = [
-    {
-        tier: 'Starter',
-        price: '20',
-        period: '/project',
-        desc: 'Perfect for small businesses and personal projects that need a professional web presence.',
-        features: [
-            { text: 'Single-page website', enabled: true },
-            { text: 'Responsive design', enabled: true },
-            { text: 'Contact form', enabled: true },
-            { text: 'Basic SEO setup', enabled: true },
-            { text: '1 round of revisions', enabled: true },
-            { text: 'Custom animations', enabled: false },
-            { text: 'CMS integration', enabled: false },
-            { text: 'Priority support', enabled: false }
-        ],
-        cta: 'Get Started',
-        popular: false
-    },
-    {
-        tier: 'Professional',
-        price: '50',
-        period: '/project',
-        desc: 'Ideal for growing businesses that need a feature-rich, multi-page web application.',
-        features: [
-            { text: 'Multi-page website (up to 8)', enabled: true },
-            { text: 'Responsive design', enabled: true },
-            { text: 'Contact form + integrations', enabled: true },
-            { text: 'Advanced SEO setup', enabled: true },
-            { text: '3 rounds of revisions', enabled: true },
-            { text: 'Custom animations', enabled: true },
-            { text: 'CMS integration', enabled: true },
-            { text: 'Priority support', enabled: false }
-        ],
-        cta: 'Choose Professional',
-        popular: true
-    },
-    {
-        tier: 'Enterprise',
-        price: '200',
-        period: '+',
-        desc: 'For enterprises needing complex, scalable web solutions with ongoing support.',
-        features: [
-            { text: 'Unlimited pages', enabled: true },
-            { text: 'Responsive design', enabled: true },
-            { text: 'Advanced forms & workflows', enabled: true },
-            { text: 'Full SEO & analytics suite', enabled: true },
-            { text: 'Unlimited revisions', enabled: true },
-            { text: 'Custom animations', enabled: true },
-            { text: 'CMS + API integration', enabled: true },
-            { text: 'Priority support (30 days)', enabled: true }
-        ],
-        cta: 'Contact Me',
-        popular: false
-    }
-];
+
 // ─── GENERATE PROJECT CARD GRADIENT PLACEHOLDER ────────────────
 function generateProjectGradient(index) {
     const gradients = [
@@ -342,25 +286,7 @@ function renderServices() {
         </div>
     `).join('');
 }
-// ─── RENDER PRICING ───────────────────────────────────────────
-function renderPricing() {
-    const grid = document.getElementById('pricingGrid');
-    if (!grid) return;
-    grid.innerHTML = pricingPlans.map(plan => `
-        <div class="pricing-card${plan.popular ? ' popular' : ''} animate-in">
-            ${plan.popular ? '<span class="pricing-badge">Most Popular</span>' : ''}
-            <div class="pricing-tier">${plan.tier}</div>
-            <div class="pricing-price">
-                <span class="currency">$</span>${plan.price}<span class="period">${plan.period}</span>
-            </div>
-            <p class="pricing-desc">${plan.desc}</p>
-            <ul class="pricing-features">
-                ${plan.features.map(f => `<li class="${f.enabled ? '' : 'disabled'}">${f.text}</li>`).join('')}
-            </ul>
-            <a href="#contact" class="pricing-cta">${plan.cta}</a>
-        </div>
-    `).join('');
-}
+
 // ─── PROJECT MODAL ────────────────────────────────────────────
 let currentSlide = 0;
 let currentProject = null;
@@ -546,7 +472,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     renderTimeline();
     renderServices();
-    renderPricing();
     initScrollAnimations();
     initActiveNav();
     initSmoothScroll();
