@@ -411,8 +411,11 @@ function initActiveNav() {
 function initSmoothScroll() {
     document.querySelectorAll('.dock-icon').forEach(icon => {
         icon.addEventListener('click', (e) => {
+            const href = icon.getAttribute('href');
+            // Only intercept hash links; let page links (e.g. pricing.html) navigate normally
+            if (!href || !href.startsWith('#')) return;
             e.preventDefault();
-            const target = document.querySelector(icon.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
