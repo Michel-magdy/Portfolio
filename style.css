@@ -45,6 +45,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -1562,6 +1563,10 @@ img {
 
 @media (max-width: 768px) {
 
+    .section {
+        padding: 4rem 1.25rem;
+    }
+
     /* Dock becomes bottom horizontal bar on mobile */
     .dock {
         left: 50%;
@@ -1573,6 +1578,10 @@ img {
     }
 
     .dock-tooltip {
+        display: none;
+    }
+
+    .hero-hover-image {
         display: none;
     }
 
@@ -1660,7 +1669,7 @@ img {
 
 @media (max-width: 480px) {
     .section {
-        padding: 4rem 1rem 2.5rem;
+        padding: 3rem 0.75rem 2.5rem;
     }
 
     .stats-row {
