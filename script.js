@@ -38,16 +38,15 @@ const projects = [
             'Dynamic product catalog with category filtering',
             'Real-time shopping cart with quantity management',
             'Responsive design across all devices',
-            'Glassmorphism UI with smooth micro-animations',
             'Form validation for checkout process'
         ],
         tech: ['HTML', 'CSS', 'JavaScript'],
         images: [
-            'assets/images/E-commerce.png',
-            'assets/images/E-commerce2.png',
-            'assets/images/E-commerce3.png',
+            'assets/images/Ecommerce.png',
+            'assets/images/Ecommerce2.png',
+            'assets/images/Ecommerce3.png',
         ],
-        links: { live: '#', github: '#' }
+        links: { live: '#', github: 'https://github.com/Michel-magdy/static-Ecommerce' }
     },
     {
         title: 'AXE GYM Website',
@@ -57,7 +56,6 @@ const projects = [
         features: [
             'Bold hero section with animated text reveals',
             'Interactive membership plan comparison cards',
-            'Scroll-triggered section animations',
             'Image gallery with hover effects',
             'Mobile-first responsive design'
         ],
@@ -67,7 +65,7 @@ const projects = [
             'assets/images/AXEGym2.png',
             'assets/images/AXEGym3.png',
         ],
-        links: { live: '#', github: '#' }
+        links: { live: '#', github: 'https://github.com/Michel-magdy/static-Ecommerce' }
     },
     {
         title: 'Task Manager App',
