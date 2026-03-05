@@ -409,6 +409,29 @@ img {
     color: var(--accent-light) !important;
 }
 
+/* CV Download Button */
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent-gradient);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-smooth);
+    text-decoration: none;
+}
+
+.cv-btn:hover {
+    box-shadow: 0 8px 30px rgba(74, 158, 255, 0.35);
+    transform: translateY(-2px);
+}
+
 /* Profile Image */
 .about-image {
     display: flex;
