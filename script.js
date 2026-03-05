@@ -321,30 +321,38 @@ function openModal(index) {
     if (currentProject.links.github && currentProject.links.github !== '#') {
         linksEl.innerHTML += `<a href="${currentProject.links.github}" target="_blank" rel="noopener" class="modal-link"><i class="fab fa-github"></i> Source Code</a>`;
     }
-    // Carousel — use gradient placeholders if no images
+    // Main image + thumbnail list
     const images = currentProject.images.length > 0
         ? currentProject.images
         : [generateProjectGradient(index)];
     if (currentProject.images.length > 0) {
-        carouselEl.innerHTML = images.map((src, i) =>
-            `<img src="${src}" alt="${currentProject.title} screenshot ${i + 1}" class="${i === 0 ? 'active' : ''}">`
-        ).join('');
+        // Main image
+        carouselEl.innerHTML = `<img src="${images[0]}" alt="${currentProject.title} main screenshot" class="modal-main-img">`;
+        // Thumbnail list below main image
+        if (images.length > 1) {
+            dotsEl.innerHTML = images.map((src, i) =>
+                `<div class="modal-thumb ${i === 0 ? 'active' : ''}" data-index="${i}">
+                    <img src="${src}" alt="${currentProject.title} screenshot ${i + 1}">
+                </div>`
+            ).join('');
+            dotsEl.querySelectorAll('.modal-thumb').forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    const idx = parseInt(thumb.dataset.index);
+                    // Update main image
+                    carouselEl.querySelector('.modal-main-img').src = images[idx];
+                    // Update active thumb
+                    dotsEl.querySelectorAll('.modal-thumb').forEach((t, i) => t.classList.toggle('active', i === idx));
+                });
+            });
+        } else {
+            dotsEl.innerHTML = '';
+        }
     } else {
         carouselEl.innerHTML = `
-            <div style="width:100%;height:100%;background:${generateProjectGradient(index)};display:flex;flex-direction:column;align-items:center;justify-content:center;position:absolute;inset:0;opacity:1;" class="active">
+            <div style="width:100%;height:100%;background:${generateProjectGradient(index)};display:flex;flex-direction:column;align-items:center;justify-content:center;" class="modal-main-img">
                 <span style="font-size:4rem;opacity:0.4;color:#fff;font-family:var(--font-heading);">${currentProject.title.charAt(0)}</span>
                 <span style="font-size:0.85rem;opacity:0.5;color:#fff;margin-top:0.5rem;">${currentProject.title}</span>
             </div>`;
-    }
-    // Dots
-    if (images.length > 1) {
-        dotsEl.innerHTML = images.map((_, i) =>
-            `<button class="carousel-dot ${i === 0 ? 'active' : ''}" data-slide="${i}" aria-label="Slide ${i + 1}"></button>`
-        ).join('');
-        dotsEl.querySelectorAll('.carousel-dot').forEach(dot => {
-            dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.slide)));
-        });
-    } else {
         dotsEl.innerHTML = '';
     }
     // Show modal
