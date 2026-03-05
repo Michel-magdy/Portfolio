@@ -87,22 +87,7 @@ const projects = [
         ],
         links: { live: '#', github: '#' }
     },
-    {
-        title: 'Portfolio Website',
-        category: 'Personal Project · Ongoing',
-        shortDesc: 'This very portfolio — a premium dark-themed showcase with bento grid and glassmorphism.',
-        description: 'A premium personal portfolio combining bento-grid layouts with glassmorphism aesthetics. Features smooth scroll animations, a detailed project modal with image carousel, and an interactive experience timeline.',
-        features: [
-            'Bento grid layout for the about section',
-            'Project detail modal with image carousel',
-            'Experience timeline with glassmorphic cards',
-            'IntersectionObserver scroll animations',
-            'Fully responsive sidebar navigation'
-        ],
-        tech: ['HTML', 'CSS', 'JavaScript'],
-        images: [],
-        links: { live: '#', github: '#' }
-    },
+
 ];
 // ─── EXPERIENCE DATA ──────────────────────────────────────────
 const experiences = [
