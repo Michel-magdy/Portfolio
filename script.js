@@ -65,7 +65,7 @@ const projects = [
             'assets/images/AXEGym2.png',
             'assets/images/AXEGym3.png',
         ],
-        links: { live: '#', github: 'https://github.com/Michel-magdy/static-Ecommerce' }
+        links: { live: '#', github: '#' }
     },
     {
         title: 'Task Manager App',
