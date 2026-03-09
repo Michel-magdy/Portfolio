@@ -613,6 +613,298 @@ img {
 }
 
 /* ============================================================
+   ABOUT ME SECTION
+   ============================================================ */
+.aboutme-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Photo Column */
+.aboutme-photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.aboutme-photo-frame {
+  position: relative;
+  width: 260px;
+  height: 320px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-card);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 50px rgba(74, 158, 255, 0.08);
+  transition: all 0.5s var(--ease-smooth);
+}
+
+.aboutme-photo-frame:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 70px rgba(74, 158, 255, 0.15);
+  border-color: rgba(74, 158, 255, 0.25);
+}
+
+.aboutme-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 22px;
+  padding: 1px;
+  background: linear-gradient(160deg, rgba(74, 158, 255, 0.4), transparent 50%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 2;
+}
+
+.aboutme-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.aboutme-photo-glow {
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(74, 158, 255, 0.2), transparent 70%);
+  pointer-events: none;
+}
+
+/* Availability Status */
+.aboutme-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #4ade80;
+  letter-spacing: 0.02em;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5);
+  }
+
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
+  }
+}
+
+/* Info Column */
+.aboutme-info-col {
+  padding-top: 0.5rem;
+}
+
+.aboutme-name {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.aboutme-role {
+  color: var(--accent-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+.aboutme-bio {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+/* Details Grid */
+.aboutme-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.aboutme-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.aboutme-detail:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(74, 158, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.aboutme-detail i {
+  font-size: 1rem;
+  color: var(--accent-light);
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.aboutme-detail div {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.detail-value {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Philosophy Quote */
+.aboutme-philosophy {
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+  position: relative;
+}
+
+.aboutme-quote-icon {
+  font-size: 1.2rem;
+  color: var(--accent);
+  opacity: 0.3;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.aboutme-philosophy p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   SKILLS SECTION
+   ============================================================ */
+.skills-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skills-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skills-group-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills-group-label i {
+  font-size: 0.75rem;
+  color: var(--accent-light);
+}
+
+.skills-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-tile {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  transition: all 0.35s var(--ease-smooth);
+  cursor: default;
+}
+
+.skill-tile:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.skill-tile i {
+  font-size: 1.3rem;
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.skill-tile:hover i {
+  transform: scale(1.15);
+}
+
+.skill-tile span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* ============================================================
    SECTION HEADINGS (Shared)
    ============================================================ */
 .section-heading {
@@ -1763,6 +2055,21 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .aboutme-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .aboutme-info-col {
+    text-align: left;
+  }
+
+  .aboutme-photo-frame {
+    width: 220px;
+    height: 270px;
+  }
+
   .modal-body {
     grid-template-columns: 1fr;
   }
@@ -1844,6 +2151,15 @@ img {
 
   .pricing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .aboutme-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutme-photo-frame {
+    width: 200px;
+    height: 250px;
   }
 
   .pricing-card.popular {
