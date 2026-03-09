@@ -174,6 +174,34 @@ const services = [
     }
 ];
 
+// ─── TESTIMONIALS DATA ────────────────────────────────────────
+const testimonials = [
+    {
+        name: 'Ahmed Hassan',
+        role: 'Project Manager',
+        text: 'Michel delivered an outstanding e-commerce platform that exceeded our expectations. His attention to detail and clean code made the entire process smooth and professional.',
+        rating: 5,
+    },
+    {
+        name: 'Sarah Johnson',
+        role: 'Startup Founder',
+        text: 'Working with Michel was a fantastic experience. He transformed our vision into a beautiful, responsive website with incredible animations and performance.',
+        rating: 5,
+    },
+    {
+        name: 'Omar Khalil',
+        role: 'UI/UX Designer',
+        text: 'Michel has an exceptional eye for translating designs into pixel-perfect code. His technical skills combined with design sensibility make him a rare find.',
+        rating: 5,
+    },
+    {
+        name: 'Lina Marcos',
+        role: 'Business Owner',
+        text: 'The gym website Michel built for us has significantly increased our online presence. Professional, fast, and always communicative throughout the project.',
+        rating: 4,
+    },
+];
+
 // ─── GENERATE PROJECT CARD GRADIENT PLACEHOLDER ────────────────
 function generateProjectGradient(index) {
     const gradients = [
@@ -268,6 +296,37 @@ function renderServices() {
             </ul>
         </div>
     `).join('');
+}
+// ─── RENDER TESTIMONIALS ──────────────────────────────────────
+function renderTestimonials() {
+    const grid = document.getElementById('testimonialsGrid');
+    if (!grid) return;
+    const avatarGradients = [
+        'linear-gradient(135deg, #4a9eff, #2850a0)',
+        'linear-gradient(135deg, #6bb5ff, #4a9eff)',
+        'linear-gradient(135deg, #34d399, #059669)',
+        'linear-gradient(135deg, #a78bfa, #7c3aed)',
+    ];
+    grid.innerHTML = testimonials.map((t, i) => {
+        const stars = Array.from({ length: 5 }, (_, s) =>
+            `<i class="fas fa-star${s < t.rating ? '' : '-half-alt'}" style="color:${s < t.rating ? '#fbbf24' : 'var(--text-muted)'};"></i>`
+        ).join('');
+        const initials = t.name.split(' ').map(w => w[0]).join('');
+        return `
+        <div class="testimonial-card animate-in">
+            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="testimonial-stars">${stars}</div>
+            <p class="testimonial-text">${t.text}</p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar" style="background:${avatarGradients[i % avatarGradients.length]}">${initials}</div>
+                <div class="testimonial-info">
+                    <h4>${t.name}</h4>
+                    <span>${t.role}</span>
+                </div>
+            </div>
+        </div>
+        `;
+    }).join('');
 }
 
 // ─── PROJECT MODAL ────────────────────────────────────────────
@@ -466,6 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     renderTimeline();
     renderServices();
+    renderTestimonials();
     initScrollAnimations();
     initActiveNav();
     initSmoothScroll();
