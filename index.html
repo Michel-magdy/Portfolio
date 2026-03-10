@@ -94,9 +94,9 @@
                                 <strong class="accent-text">beautiful</strong> and <strong
                                     class="accent-text">functional</strong> digital experiences.
                             </p>
-                            <p>Full-Stack Developer specializing in Angular and .NET with 1+ years of experience and 3
-                                completed projects. I build scalable web applications and high-performance dashboards
-                                that transform complex data into fast, reliable business insights.</p>
+                            <p>I'm a creative developer who finds joy in turning ideas into
+                                pixel-perfect, high-performance web experiences. With a strong
+                                foundation in both front-end aesthetics and back-end architecture.</p>
                         </div>
                         <a href="https://drive.google.com/file/d/1rhgcsAPZQCBsiDApYezIv1-wKAXuzYPt/view?usp=sharing"
                             class="cv-btn animate-in">
@@ -195,10 +195,9 @@
                         <p class="aboutme-role">Full-Stack Software Developer</p>
 
                         <p class="aboutme-bio">
-                            I'm a creative developer who finds joy in turning ideas into
-                            pixel-perfect, high-performance web experiences. With a strong
-                            foundation in both front-end aesthetics and back-end architecture,
-                            I bring a holistic approach to every project I touch.
+                            Full-Stack Developer specializing in Angular and .NET with 1+ years of experience and 3
+                            completed projects. I build scalable web applications and high-performance dashboards
+                            that transform complex data into fast, reliable business insights.
                         </p>
 
                         <div class="aboutme-details-grid">
@@ -388,28 +387,43 @@
     <div class="modal-overlay" id="projectModal">
         <div class="modal-container">
             <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
-            <div class="modal-body">
-                <div class="modal-left">
+            <div class="modal-body-new">
+
+                <!-- Hero Image Area (Top) -->
+                <div class="modal-hero" id="modalHero">
                     <div class="modal-carousel" id="modalCarousel">
                         <!-- Images injected by JS -->
                     </div>
                     <div class="carousel-dots" id="carouselDots"></div>
                 </div>
-                <div class="modal-right">
+
+                <!-- Floating Info Card (Overlaps hero) -->
+                <div class="modal-header-card animate-modal-content">
                     <h2 class="modal-title" id="modalTitle"></h2>
                     <p class="modal-category" id="modalCategory"></p>
-
-                    <h4 class="modal-label">DESCRIPTION</h4>
-                    <p class="modal-description" id="modalDescription"></p>
-
-                    <h4 class="modal-label">KEY FEATURES</h4>
-                    <ul class="modal-features" id="modalFeatures"></ul>
-
-                    <h4 class="modal-label">TECHNOLOGIES</h4>
-                    <div class="modal-tech" id="modalTech"></div>
-
                     <div class="modal-links" id="modalLinks"></div>
                 </div>
+
+                <!-- Content Area (Bottom) -->
+                <div class="modal-content-grid animate-modal-content">
+                    <div class="modal-desc-col">
+                        <h4 class="modal-label">Overview</h4>
+                        <p class="modal-description" id="modalDescription"></p>
+                    </div>
+
+                    <div class="modal-sidebar-col">
+                        <div class="modal-section-block">
+                            <h4 class="modal-label">Key Features</h4>
+                            <ul class="modal-features" id="modalFeatures"></ul>
+                        </div>
+
+                        <div class="modal-section-block">
+                            <h4 class="modal-label">Technologies</h4>
+                            <div class="modal-tech" id="modalTech"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

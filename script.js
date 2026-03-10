@@ -400,9 +400,11 @@ function openModal(index) {
     const images = currentProject.images.length > 0
         ? currentProject.images
         : [generateProjectGradient(index)];
+
     if (currentProject.images.length > 0) {
         // Main image
         carouselEl.innerHTML = `<img src="${images[0]}" alt="${currentProject.title} main screenshot" class="modal-main-img">`;
+
         // Thumbnail list below main image
         if (images.length > 1) {
             dotsEl.innerHTML = images.map((src, i) =>
@@ -410,11 +412,19 @@ function openModal(index) {
                     <img src="${src}" alt="${currentProject.title} screenshot ${i + 1}">
                 </div>`
             ).join('');
+
             dotsEl.querySelectorAll('.modal-thumb').forEach(thumb => {
                 thumb.addEventListener('click', () => {
                     const idx = parseInt(thumb.dataset.index);
-                    // Update main image
-                    carouselEl.querySelector('.modal-main-img').src = images[idx];
+                    const mainImg = carouselEl.querySelector('.modal-main-img');
+
+                    // Simple fade effect
+                    mainImg.style.opacity = '0.5';
+                    setTimeout(() => {
+                        mainImg.src = images[idx];
+                        mainImg.style.opacity = '1';
+                    }, 150);
+
                     // Update active thumb
                     dotsEl.querySelectorAll('.modal-thumb').forEach((t, i) => t.classList.toggle('active', i === idx));
                 });
@@ -430,14 +440,27 @@ function openModal(index) {
             </div>`;
         dotsEl.innerHTML = '';
     }
+
     // Show modal
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Trigger staggered entrance animations
+    setTimeout(() => {
+        document.querySelectorAll('.animate-modal-content').forEach(el => {
+            el.classList.add('visible');
+        });
+    }, 50);
 }
 function closeModal() {
     const modal = document.getElementById('projectModal');
     modal.classList.remove('active');
     document.body.style.overflow = '';
+
+    // Reset entrance animations
+    document.querySelectorAll('.animate-modal-content').forEach(el => {
+        el.classList.remove('visible');
+    });
 }
 function goToSlide(index) {
     currentSlide = index;
