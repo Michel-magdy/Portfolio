@@ -41,6 +41,9 @@ const projects = [
             'Form validation for checkout process'
         ],
         tech: ['HTML', 'CSS', 'JavaScript'],
+        challenge: 'Building a seamless shopping experience with real-time cart updates and smooth filtering — all without a backend or framework.',
+        action: 'Designed a modular vanilla JS architecture with event-driven state management, dynamic DOM rendering, and CSS transitions for every interaction.',
+        result: 'Delivered a fully responsive e-commerce platform with instant product filtering, real-time cart totals, and a polished checkout flow — achieving fast load times and zero dependencies.',
         images: [
             'assets/images/Ecommerce.png',
             'assets/images/Ecommerce2.png',
@@ -60,6 +63,9 @@ const projects = [
             'Mobile-first responsive design'
         ],
         tech: ['HTML', 'CSS', 'JavaScript'],
+        challenge: 'Creating a visually striking gym website that captures the brand\'s energy while maintaining smooth performance across all devices.',
+        action: 'Implemented scroll-triggered animations, interactive membership comparison cards, and a mobile-first responsive layout with aggressive dark theme and vibrant gradients.',
+        result: 'Produced a bold, high-impact website with fluid animations and interactive elements that boosted user engagement and showcased the gym\'s brand identity.',
         images: [
             'assets/images/AXEGym.png',
             'assets/images/AXEGym2.png',
@@ -80,6 +86,9 @@ const projects = [
             'Filter and search functionality'
         ],
         tech: ['HTML', 'CSS', 'JavaScript'],
+        challenge: 'Building a productivity app that persists data across sessions and supports intuitive task reordering without any external libraries.',
+        action: 'Leveraged LocalStorage for persistence, implemented a custom drag-and-drop system, and added priority-based color coding with filter and search capabilities.',
+        result: 'Delivered a clean, zero-dependency task manager with persistent storage, smooth drag-and-drop, and instant search — improving personal workflow efficiency.',
         images: [
             'assets/images/To-Do.png'
         ],
@@ -381,6 +390,19 @@ function openModal(index) {
     titleEl.textContent = currentProject.title;
     catEl.textContent = currentProject.category;
     descEl.textContent = currentProject.description;
+    // Challenge / Action / Result
+    const carEl = document.getElementById('modalCar');
+    const challengeEl = document.getElementById('modalChallenge');
+    const actionEl = document.getElementById('modalAction');
+    const resultEl = document.getElementById('modalResult');
+    if (currentProject.challenge && currentProject.action && currentProject.result) {
+        challengeEl.textContent = currentProject.challenge;
+        actionEl.textContent = currentProject.action;
+        resultEl.textContent = currentProject.result;
+        carEl.style.display = '';
+    } else {
+        carEl.style.display = 'none';
+    }
     // Features
     featuresEl.innerHTML = currentProject.features.map(f => `<li>${f}</li>`).join('');
     // Tech chips
