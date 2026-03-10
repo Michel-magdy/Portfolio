@@ -32,7 +32,7 @@
     <nav class="dock" id="dock">
         <a href="#about" class="dock-icon active" data-section="about" aria-label="About">
             <i class="fas fa-user"></i>
-            <span class="dock-tooltip">About</span>
+            <span class="dock-tooltip">Home</span>
         </a>
         <a href="#aboutme" class="dock-icon" data-section="aboutme" aria-label="About Me">
             <i class="fas fa-id-card"></i>
@@ -71,35 +71,100 @@
     <!-- ============ MAIN CONTENT ============ -->
     <main class="main-content">
 
-        <!-- ===== ABOUT SECTION ===== -->
+        <!-- ===== ABOUT / HOME SECTION ===== -->
         <section id="about" class="section section-about">
             <div class="section-content">
-                <h3>Hi, I'm</h3>
-                <h1 class="hero-heading animate-in">
-                    <span class="hero-name-wrapper" id="heroNameWrapper">
-                        <span class="hero-line">Michel</span>
-                        <span class="hero-line accent">Magdy</span>
-                        <div class="hero-hover-image" id="heroHoverImage">
-                            <img src="./assets/hover3.jpeg" alt="" class="hover-cycle-img" id="hoverCycleImg">
-                        </div>
-                    </span>
-                </h1>
-                <p class="hero-subtitle animate-in">Software Developer</p>
+                <div class="hero-layout">
+                    <!-- Left: Text -->
+                    <div class="hero-text-col">
+                        <h3>Hi, I'm</h3>
+                        <h1 class="hero-heading animate-in">
+                            <span class="hero-name-wrapper" id="heroNameWrapper">
+                                <span class="hero-line">Michel</span>
+                                <span class="hero-line accent">Magdy</span>
+                                <div class="hero-hover-image" id="heroHoverImage">
+                                    <img src="./assets/hover3.jpeg" alt="" class="hover-cycle-img" id="hoverCycleImg">
+                                </div>
+                            </span>
+                        </h1>
+                        <p class="hero-subtitle animate-in">Software Developer</p>
 
-                <div class="about-grid">
-                    <div class="about-text animate-in">
-                        <p>I'm <strong>Michel Magdi</strong>, a passionate Software Engineer who loves building <strong
-                                class="accent-text">beautiful</strong> and <strong
-                                class="accent-text">functional</strong> digital experiences.</p>
-                        <p>Full-Stack Developer specializing in Angular and .NET with 1+ years of experience and 3
-                            completed projects. I build scalable web applications and high-performance dashboards that
-                            transform complex data into fast, reliable business insights.</p>
-                        <p>From dynamic web applications to elegant user interfaces, my philosophy remains the same:
-                            make it accessible, performant, and delight the user.</p>
+                        <div class="about-text animate-in">
+                            <p>I'm <strong>Michel Magdi</strong>, a passionate Software Engineer who loves building
+                                <strong class="accent-text">beautiful</strong> and <strong
+                                    class="accent-text">functional</strong> digital experiences.
+                            </p>
+                            <p>Full-Stack Developer specializing in Angular and .NET with 1+ years of experience and 3
+                                completed projects. I build scalable web applications and high-performance dashboards
+                                that transform complex data into fast, reliable business insights.</p>
+                        </div>
                         <a href="https://drive.google.com/file/d/1rhgcsAPZQCBsiDApYezIv1-wKAXuzYPt/view?usp=sharing"
                             class="cv-btn animate-in">
                             <i class="fas fa-download"></i> Download CV
                         </a>
+                    </div>
+
+                    <!-- Right: Animated Fullstack Illustration -->
+                    <div class="hero-illustration animate-in">
+                        <!-- Code Editor Mockup -->
+                        <div class="hero-editor">
+                            <div class="editor-topbar">
+                                <span class="editor-dot red"></span>
+                                <span class="editor-dot yellow"></span>
+                                <span class="editor-dot green"></span>
+                                <span class="editor-tab-name">index.ts</span>
+                            </div>
+                            <div class="editor-body">
+                                <div class="code-line"><span class="ln">1</span><span class="kw">import</span> { <span
+                                        class="fn">Component</span> } <span class="kw">from</span> <span
+                                        class="str">'@angular/core'</span>;</div>
+                                <div class="code-line"><span class="ln">2</span></div>
+                                <div class="code-line"><span class="ln">3</span><span class="dec">@Component</span>({
+                                </div>
+                                <div class="code-line"><span class="ln">4</span> selector: <span
+                                        class="str">'app-root'</span>,</div>
+                                <div class="code-line"><span class="ln">5</span> template: <span
+                                        class="str">`&lt;h1&gt;Hello&lt;/h1&gt;`</span></div>
+                                <div class="code-line"><span class="ln">6</span>})</div>
+                                <div class="code-line"><span class="ln">7</span><span class="kw">export class</span>
+                                    <span class="fn">AppComponent</span> {
+                                </div>
+                                <div class="code-line"><span class="ln">8</span> title = <span
+                                        class="str">'portfolio'</span>;</div>
+                                <div class="code-line"><span class="ln">9</span>}</div>
+                                <div class="code-line cursor-line"><span class="ln">10</span><span
+                                        class="cursor-blink">|</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Tech Icons -->
+                        <div class="hero-float-icon float-icon-1" title="Angular">
+                            <i class="fab fa-angular"></i>
+                        </div>
+                        <div class="hero-float-icon float-icon-2" title=".NET">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div class="hero-float-icon float-icon-3" title="JavaScript">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="hero-float-icon float-icon-4" title="HTML5">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="hero-float-icon float-icon-5" title="CSS3">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="hero-float-icon float-icon-6" title="Database">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="hero-float-icon float-icon-7" title="API">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <div class="hero-float-icon float-icon-8" title="Git">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+
+                        <!-- Glow effect -->
+                        <div class="hero-illustration-glow"></div>
                     </div>
                 </div>
             </div>
@@ -279,8 +344,12 @@
                 <h2 class="section-heading animate-in">Reviews</h2>
                 <p class="section-subtitle animate-in">What people say about working with me.</p>
 
-                <div class="testimonials-grid" id="testimonialsGrid">
-                    <!-- Cards injected by JS -->
+                <div class="testimonial-view-container" id="testimonialsContainer">
+                    <!-- Main active testimonial will be injected here -->
+                    <div class="testimonial-main" id="testimonialMain"></div>
+
+                    <!-- Thumbnails will be injected here -->
+                    <div class="testimonial-thumbnails" id="testimonialThumbs"></div>
                 </div>
             </div>
         </section>
