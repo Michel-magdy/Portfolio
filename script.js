@@ -592,6 +592,32 @@ function initNameHoverEffect() {
         }
     });
 }
+// ─── THEME TOGGLE ─────────────────────────────────────────────
+function initThemeToggle() {
+    const themeBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    
+    // Check saved theme
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+    
+    // Update Document
+    function updateTheme() {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'light') {
+            themeIcon.className = 'fas fa-moon';
+        } else {
+            themeIcon.className = 'fas fa-sun';
+        }
+    }
+    
+    updateTheme();
+    
+    themeBtn.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', currentTheme);
+        updateTheme();
+    });
+}
 // ─── INITIALIZE EVERYTHING ────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
     // Always start at the top — clear any leftover URL hash
@@ -599,6 +625,8 @@ document.addEventListener('DOMContentLoaded', () => {
         history.replaceState(null, '', window.location.pathname);
     }
     window.scrollTo(0, 0);
+
+    initThemeToggle();
 
     renderProjects();
     renderTimeline();
