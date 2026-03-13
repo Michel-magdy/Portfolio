@@ -235,7 +235,7 @@ function renderProjects() {
         <div class="project-card animate-in" data-index="${i}">
             <div class="project-card-image">
                 ${project.images.length > 0
-            ? `<img src="${project.images[0]}" alt="${project.title}" style="width:100%;height:100%;object-fit:cover;">`
+            ? `<img loading="lazy" src="${project.images[0]}" alt="${project.title}" style="width:100%;height:100%;object-fit:cover;">`
             : `<div style="width:100%;height:100%;background:${generateProjectGradient(i)};display:flex;align-items:center;justify-content:center;">
                         <span style="font-size:2.5rem;opacity:0.5;color:#fff;font-family:var(--font-heading);">${project.title.charAt(0)}</span>
                     </div>`
@@ -270,10 +270,10 @@ function renderTimeline() {
     if (!timeline) return;
     timeline.innerHTML = experiences.map(exp => {
         const nodeContent = exp.image
-            ? `<img src="${exp.image}" alt="${exp.company}" style="width:100%;height:100%;object-fit:contain;border-radius:50%;">`
+            ? `<img loading="lazy" src="${exp.image}" alt="${exp.company}" style="width:100%;height:100%;object-fit:contain;border-radius:50%;">`
             : `<i class="${exp.icon}"></i>`;
         const logoContent = exp.image
-            ? `<img src="${exp.image}" alt="${exp.company}" style="width:100%;height:100%;object-fit:contain;border-radius:10px;">`
+            ? `<img loading="lazy" src="${exp.image}" alt="${exp.company}" style="width:100%;height:100%;object-fit:contain;border-radius:10px;">`
             : `<i class="${exp.icon}"></i>`;
         return `
         <div class="timeline-item animate-in">
@@ -425,13 +425,13 @@ function openModal(index) {
 
     if (currentProject.images.length > 0) {
         // Main image
-        carouselEl.innerHTML = `<img src="${images[0]}" alt="${currentProject.title} main screenshot" class="modal-main-img">`;
+        carouselEl.innerHTML = `<img loading="lazy" src="${images[0]}" alt="${currentProject.title} main screenshot" class="modal-main-img">`;
 
         // Thumbnail list below main image
         if (images.length > 1) {
             dotsEl.innerHTML = images.map((src, i) =>
                 `<div class="modal-thumb ${i === 0 ? 'active' : ''}" data-index="${i}">
-                    <img src="${src}" alt="${currentProject.title} screenshot ${i + 1}">
+                    <img loading="lazy" src="${src}" alt="${currentProject.title} screenshot ${i + 1} ">
                 </div>`
             ).join('');
 
@@ -596,10 +596,10 @@ function initNameHoverEffect() {
 function initThemeToggle() {
     const themeBtn = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    
+
     // Check saved theme
     let currentTheme = localStorage.getItem('theme') || 'dark';
-    
+
     // Update Document
     function updateTheme() {
         document.documentElement.setAttribute('data-theme', currentTheme);
@@ -609,9 +609,9 @@ function initThemeToggle() {
             themeIcon.className = 'fas fa-sun';
         }
     }
-    
+
     updateTheme();
-    
+
     themeBtn.addEventListener('click', () => {
         currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
         localStorage.setItem('theme', currentTheme);
