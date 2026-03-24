@@ -49,7 +49,7 @@ const projects = [
             'assets/images/Ecommerce2.png',
             'assets/images/Ecommerce3.png',
         ],
-        links: { live: '#', github: 'https://github.com/Michel-magdy/static-Ecommerce' }
+        links: { live: 'https://michel-magdy.github.io/static-Ecommerce', github: 'https://github.com/Michel-magdy/static-Ecommerce' }
     },
     {
         title: 'AXE GYM Website',
@@ -92,7 +92,7 @@ const projects = [
         images: [
             'assets/images/To-Do.png'
         ],
-        links: { live: '#', github: '#' }
+        links: { live: '#', github: 'https://github.com/Michel-magdy/To-do-list-' }
     },
 
 ];
